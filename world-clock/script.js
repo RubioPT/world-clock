@@ -3,10 +3,10 @@ const dateEl = document.getElementById("date");
 const citySelect = document.getElementById("city");
 const themeToggle = document.getElementById("themeToggle");
 
-// Tarih formatlama için ay isimleri
-const aylar = [
-  "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
-  "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"
+// Month names for date formatting 
+const months = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "Agust", "September", "October", "November", "December"
 ];
 
 function updateClock() {
@@ -34,18 +34,18 @@ function updateClock() {
     const [gun, ay, yil] = dateParts;
 
     clockEl.textContent = timeStr;
-    dateEl.textContent = `${gun} ${aylar[parseInt(ay) - 1]} ${yil}`;
+    dateEl.textContent = `${gun} ${months[parseInt(ay) - 1]} ${yil}`;
   } catch (error) {
-    clockEl.textContent = "Saat alınamadı";
+    clockEl.textContent = "Could not get time ";
     dateEl.textContent = "";
   }
 }
 
-// Her saniyede bir güncelle
+// Update every second
 setInterval(updateClock, 1000);
 updateClock();
 
-// Tema değiştirme
+// Change theme
 themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
 });
