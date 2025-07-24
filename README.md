@@ -37,8 +37,11 @@ To run this project on your computer:
 
 ## 📁 File Structure
 📦 world-clock
+
 ├── index.html # Main HTML file
+
 ├── style.css # Stylesheet
+
 └── script.js # JavaScript logic
 
 ---
